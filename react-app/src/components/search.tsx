@@ -1,15 +1,45 @@
-import React from 'react';
+import React, { ChangeEvent, Component } from 'react';
 import '../css/search.css';
 
-function Search() {
-  return (
-    <div className="search">
-      <form action="">
-        <input className="search__input" type="text" value={'Поиск'} />
-        <input className="search__submit" type="submit" value={'Поиск'} />
-      </form>
-    </div>
-  );
-}
+export default class Search extends Component {
+  state = {
+    search: '',
+  };
 
-export default Search;
+  handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const input = event.target;
+    const value = input.value;
+    console.log(input);
+
+    this.setState({ [input.name]: value });
+  };
+
+  handleFormSubmit = () => {
+    const { search } = this.state;
+    localStorage.setItem('search', search ? search : '');
+  };
+
+  componentDidMount() {
+    const search = localStorage.getItem('search');
+    this.setState({ search });
+  }
+
+  render() {
+    return (
+      <div className="search">
+        <form onSubmit={this.handleFormSubmit}>
+          <input
+            name="search"
+            className="search__input"
+            placeholder="Поиск"
+            value={this.state.search}
+            onChange={this.handleChange}
+          />
+          <button className="search__submit" type="submit">
+            Поиск
+          </button>
+        </form>
+      </div>
+    );
+  }
+}
