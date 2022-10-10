@@ -9,7 +9,6 @@ export default class Search extends Component {
   handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const input = event.target;
     const value = input.value;
-    console.log(input);
 
     this.setState({ [input.name]: value });
   };
