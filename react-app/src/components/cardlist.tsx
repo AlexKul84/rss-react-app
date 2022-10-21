@@ -7,7 +7,19 @@ import timmy from '../assets/images/timmy.png';
 import freddie from '../assets/images/freddie.png';
 import charly from '../assets/images/charly.png';
 
-const data = [
+export interface IData {
+  name: string;
+  img: string;
+  type: string;
+  breed: string;
+  description: string;
+  age: string;
+  inoculations: string[];
+  diseases: string[];
+  parasites: string[];
+}
+
+const data: IData[] = [
   {
     name: 'Jennifer',
     img: jennifer,

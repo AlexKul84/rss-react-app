@@ -1,29 +1,33 @@
 import React, { ChangeEvent, Component } from 'react';
 import '../css/search.css';
 
+interface IState {
+  search: string;
+}
+
 export default class Search extends Component {
-  state = {
+  state: IState = {
     search: '',
   };
 
-  handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const input = event.target;
-    const value = input.value;
+  private handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    const input: EventTarget & HTMLInputElement = event.target;
+    const value: string = input.value;
     this.setState({ search: value });
     localStorage.setItem('search', 'search' ? value : '');
   };
 
-  handleFormSubmit = () => {
-    const search = this.state.search;
+  private handleFormSubmit = (): void => {
+    const search: string = this.state.search;
     localStorage.setItem('search', 'search' ? search : '');
   };
 
-  componentDidMount() {
-    const search = localStorage.getItem('search');
+  componentDidMount(): void {
+    const search: string | null = localStorage.getItem('search');
     this.setState({ search: search });
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <div className="search">
         <form onSubmit={this.handleFormSubmit}>

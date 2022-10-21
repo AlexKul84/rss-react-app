@@ -1,6 +1,6 @@
 import React from 'react';
 
-function About() {
+function About(): JSX.Element {
   return (
     <div className="container">
       <h1>About</h1>

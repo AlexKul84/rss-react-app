@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Search from './search';
 import '../css/header.css';
 
-function Header() {
+function Header(): JSX.Element {
   return (
     <div className="header">
       <div className="container">

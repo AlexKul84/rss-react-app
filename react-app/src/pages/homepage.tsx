@@ -1,15 +1,15 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import Card from '../components/card';
-import data from '../components/cardlist';
+import data, { IData } from '../components/cardlist';
 import '../css/card.css';
 
-const pets = data.map((e, i) => (
+const pets: JSX.Element[] = data.map((e: IData, i: number) => (
   <div key={i.toString()}>
     <Card myProps={i} />
   </div>
 ));
 
-function HomePage() {
+function HomePage(): JSX.Element {
   return (
     <div className="container">
       <h1>Home</h1>

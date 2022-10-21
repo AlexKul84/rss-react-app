@@ -2,7 +2,11 @@ import React from 'react';
 import data from './cardlist';
 import '../css/card.css';
 
-function Card(props: { myProps: number }) {
+interface IProps {
+  myProps: number;
+}
+
+function Card(props: IProps) {
   return (
     <div className="card">
       <img className="card__img" src={data[props.myProps].img} alt="" />
