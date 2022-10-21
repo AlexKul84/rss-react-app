@@ -9,18 +9,18 @@ export default class Search extends Component {
   handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const input = event.target;
     const value = input.value;
-
-    this.setState({ [input.name]: value });
+    this.setState({ search: value });
+    localStorage.setItem('search', 'search' ? value : '');
   };
 
   handleFormSubmit = () => {
-    const { search } = this.state;
-    localStorage.setItem('search', search ? search : '');
+    const search = this.state.search;
+    localStorage.setItem('search', 'search' ? search : '');
   };
 
   componentDidMount() {
     const search = localStorage.getItem('search');
-    this.setState({ search });
+    this.setState({ search: search });
   }
 
   render() {
