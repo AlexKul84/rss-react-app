@@ -7,11 +7,11 @@ function Header(): JSX.Element {
   return (
     <div className="header">
       <div className="container">
-        <div className="header__navigation">
-          <Link to="/" className="header__menu-item">
+        <div data-testid="navbar" className="header__navigation">
+          <Link data-testid="home-page" to="/" className="header__menu-item">
             Home
           </Link>
-          <Link to="/about" className="header__menu-item">
+          <Link data-testid="about-page" to="/about" className="header__menu-item">
             About us
           </Link>
         </div>

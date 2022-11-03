@@ -10,7 +10,7 @@ export default class Search extends Component {
     search: '',
   };
 
-  private handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+  handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const input: EventTarget & HTMLInputElement = event.target;
     const value: string = input.value;
     this.setState({ search: value });
@@ -18,13 +18,13 @@ export default class Search extends Component {
   };
 
   private handleFormSubmit = (): void => {
-    const search: string = this.state.search;
-    localStorage.setItem('search', 'search' ? search : '');
+    const value: string = this.state.search;
+    localStorage.setItem('search', 'search' ? value : '');
   };
 
   componentDidMount(): void {
-    const search: string | null = localStorage.getItem('search');
-    this.setState({ search: search });
+    const value: string | null = localStorage.getItem('search');
+    this.setState({ search: value });
   }
 
   render(): JSX.Element {
