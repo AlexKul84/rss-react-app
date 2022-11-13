@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from 'components/header';
 import HomePage from 'pages/homepage';
 import About from 'pages/about';
+import Forms from 'pages/forms';
 import NotFound from 'pages/notFound';
 import './App.css';
 import './css/header.css';
@@ -17,6 +18,7 @@ class App extends React.Component {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
+            <Route path="/forms" element={<Forms />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

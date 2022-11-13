@@ -15,6 +15,9 @@ class Header extends React.Component {
             <Link data-testid="about-page" to="/about" className="header__menu-item">
               About us
             </Link>
+            <Link data-testid="forms-page" to="/forms" className="header__menu-item">
+              Forms
+            </Link>
           </div>
           <Search />
         </div>
