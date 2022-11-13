@@ -9,13 +9,15 @@ const pets: JSX.Element[] = data.map((e: IData, i: number) => (
   </div>
 ));
 
-function HomePage(): JSX.Element {
-  return (
-    <div className="container">
-      <h1>Home</h1>
-      <div className="cards">{pets}</div>
-    </div>
-  );
+class HomePage extends React.Component {
+  render(): React.ReactNode {
+    return (
+      <div className="container">
+        <h1>Home</h1>
+        <div className="cards">{pets}</div>
+      </div>
+    );
+  }
 }
 
 export default HomePage;
